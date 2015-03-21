@@ -3,6 +3,7 @@
 import json
 import os
 import urllib2
+import time
 from bs4 import BeautifulSoup
 base_dir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(base_dir)
@@ -24,5 +25,6 @@ for page, url in pages.iteritems():
     td = soup.select(".DataTable3 tr td")[4]
     percentage = td.string[:-1]
     data[page] = percentage
-
+    
+data['date'] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
 write_json('data/data.json', data)

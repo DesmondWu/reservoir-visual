@@ -2,7 +2,7 @@
   
   d3.json("https://rawgit.com/chihsuan/reservoir-visual/data/data/data.json", function(error, data) {
     configs = {};
-
+    document.getElementById("reser_date").innerHTML = document.getElementById("reser_date").innerHTML.replace("raw-date", data.date);
     for (id in data) {
        var percentage = data[id];
        var number = parseFloat(data[id]);
