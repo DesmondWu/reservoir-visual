@@ -1,6 +1,6 @@
 (function() {
   
-  d3.json("https://rawgit.com/chihsuan/reservoir-visual/data/data/data.json", function(error, data) {
+  d3.json("data/data.json", function(error, data) {
     configs = {};
     document.getElementById("reser_date").innerHTML = document.getElementById("reser_date").innerHTML.replace("raw-date", data.date);
     for (id in data) {
