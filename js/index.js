@@ -4,6 +4,8 @@
     configs = {};
     document.getElementById("reser_date").innerHTML = document.getElementById("reser_date").innerHTML.replace("raw-date", data.date);
     for (id in data) {
+       if (isNaN(data[id]) || data[id].toString().indexOf('.') == -1)
+         continue;
        var percentage = data[id];
        var number = parseFloat(data[id]);
        configs[id] = liquidFillGaugeDefaultSettings();
